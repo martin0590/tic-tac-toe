@@ -1,0 +1,102 @@
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lato';
+}
+
+/* Styling for the modal content */
+.modal-content {
+  width: 100%;
+    background-color: var(--background);
+    /* border: 3px solid var(--player-yellow); */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.modal-draw{
+  color: var(--player-green);
+}
+
+.who-won{
+  margin: 0;
+  font-size: 1rem;
+}
+
+.modal-winner{
+  color: var(--player-green);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-winner > span {
+  font-family: 'Black Ops One';
+  margin-right: 12px;
+  font-size: 3.5rem;
+}
+
+.modal-winner > p{
+  font-family: 'Lato';
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin: 0;
+  margin-bottom: 4px;
+  letter-spacing: 1.2px;
+}
+
+.modal-btn-container{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.quit-modal-btn{
+  /* height: 46px; */
+  /* width: 46px; */
+  font-family: 'Lato', sans-serif;
+  padding: .8rem;
+  font-weight: 900;
+  color: var(--background);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: var(--gray);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom: 6px solid var(--button-bottom);
+  letter-spacing: 1px;
+}
+
+.modal-next-round-btn{
+  /* height: 46px; */
+  /* width: 92px; */
+  font-family: 'Lato', sans-serif;
+  padding: .8rem;
+  outline: none;
+  border: none;
+  color: var(--background);
+  font-weight: 900;
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: var(--player-yellow);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom: 6px solid var(--bottom-yellow);
+  letter-spacing: .8px;
+}
