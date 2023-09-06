@@ -1,3 +1,1 @@
-export interface ResetButtonProps {
-  resetGame: () => void
-}
+export type BoardArray = Array<string | null>

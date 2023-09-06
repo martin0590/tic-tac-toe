@@ -1,14 +1,10 @@
-import { ResetIcon } from '../icons/ResetIcon'
-import type { ResetButtonProps } from '../../types/types'
 import React from 'react'
+import { ResetIcon } from '../../icons/ResetIcon'
+import type { IResetButton } from '../../types/interfaces'
 
-const ResetButton: React.FC<ResetButtonProps> = ({ resetGame }) => {
-  const handleReset = () => {
-    resetGame()
-  }
-
+const ResetButton: React.FC<IResetButton> = ({ resetGame }) => {
   return (
-    <button className='reset-button' onClick={handleReset}>
+    <button className='reset-button' onClick={resetGame}>
       <ResetIcon />
     </button>
   )
