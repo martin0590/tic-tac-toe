@@ -1,0 +1,32 @@
+.board-information{
+  width: 100%;
+  display: flex;
+  gap: 2px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.turn{
+  background-color: var(--tiles);
+  border-radius: 5px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-bottom: 8px solid var(--tile-bottom);
+
+  height: 40px;
+  width: 100px;
+
+  font-family: 'Black Ops One';
+  font-size: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.turn-span{
+  margin-left:8px;
+  font-size: 12px;
+  letter-spacing: 1.0125px;
+}

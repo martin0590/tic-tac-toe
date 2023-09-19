@@ -11,7 +11,7 @@ const Modal = ({ isModalOpen, handleQuitBtn, turn, winner, isDraw, resetGame }: 
             {winner && <div className='modal-winner'><span>{turn}</span><p>TAKES THE ROUND</p></div>}
           <div className='modal-btn-container'>
             <button className="quit-modal-btn" onClick={handleQuitBtn}>QUIT</button>
-            <button className='modal-next-round-btn' onClick={resetGame}>NEXT ROUND</button>
+            <button className='modal-next-round-btn' onClick={() => { resetGame() }}>NEXT ROUND</button>
           </div>
         </div>
       </div>

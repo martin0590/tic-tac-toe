@@ -1,0 +1,24 @@
+.tile{
+  font-family: 'Black Ops One';
+  font-size: 3rem;
+  height: 100px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--tiles);
+  border-radius: 5px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-bottom: 8px solid var(--tile-bottom);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tile.yellow{
+color: var(--player-yellow);
+}
+
+.tile.green{
+  color: var(--player-green);
+}

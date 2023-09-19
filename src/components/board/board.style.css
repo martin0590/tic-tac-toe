@@ -1,0 +1,9 @@
+.board{
+  width: 90%;
+  height: 50%;
+  display: grid;
+  grid-template-columns: repeat(3,100px);
+  place-items: center;
+  justify-content: center;
+  gap: 16px;
+}

@@ -1,5 +1,6 @@
 import type { IBoard } from '../../types/interfaces'
 import Tile from '../tile/Tile'
+import './board.style.css'
 
 const Board: React.FC<IBoard> = ({ board, updateBoard }) => {
   return (

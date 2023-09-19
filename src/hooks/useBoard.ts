@@ -1,24 +1,22 @@
 import { useState } from 'react'
-import { TURNS } from '../types/enums'
+import { TURNS, DIFFICULTY } from '../types/enums'
 import type { BoardArray } from '../types/types'
+import type { ScorePoints } from '../types/interfaces'
+import { WOMBO_COMBOS } from '../constants/combos'
 
-const WOMBO_COMBOS = [
-  [2, 5, 8],
-  [2, 4, 6],
-  [3, 4, 5],
-  [6, 7, 8],
-  [0, 1, 2],
-  [0, 3, 6],
-  [1, 4, 7],
-  [0, 4, 8]
-]
+const scores: ScorePoints = {
+  X: 0,
+  O: 0,
+  ties: 0
+}
 
 const useBoard = () => {
-  const [board, setBoard] = useState<BoardArray>(Array(9).fill(null))
+  const [board, setBoard] = useState<BoardArray>(Array(DIFFICULTY.NORMAL).fill(null))
   const [turn, setTurn] = useState(TURNS.X)
   const [winner, setWinner] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [isDraw, setisDraw] = useState(false)
+  const [score, setScore] = useState(scores)
 
   const updateBoard = (index: number) => {
     if (board[index] !== null || winner) return
@@ -31,9 +29,11 @@ const useBoard = () => {
 
     if (checkIfWinner) {
       setWinner(true)
+      setScore(prevScore => ({ ...prevScore, X: prevScore.X + 2 }))
       setIsModalOpen(true)
     } else if (noMoreMoves) {
       setisDraw(true)
+      setScore(prevScore => ({ ...prevScore, O: prevScore.O + 1, ties: prevScore.ties + 1, X: prevScore.X + 1 }))
       setIsModalOpen(true)
     } else if (turn !== newTurn) {
       const newIdx: number = checkCPUIdx(newBoard)
@@ -41,6 +41,7 @@ const useBoard = () => {
       const checkIfWinner = checkWinner(newBoard)
       if (checkIfWinner) {
         setWinner(true)
+        setScore(prevScore => ({ ...prevScore, O: prevScore.O + 2 }))
         setIsModalOpen(true)
         setTurn(TURNS.O)
       }
@@ -90,8 +91,11 @@ const useBoard = () => {
     return boardToCheck.every(tile => tile !== null)
   }
 
-  const resetGame = () => {
-    setBoard(Array(9).fill(null))
+  const resetGame = (reset?: string) => {
+    if (reset === 'reset') {
+      setScore(scores)
+    }
+    setBoard(Array(DIFFICULTY.NORMAL).fill(null))
     setTurn(TURNS.X)
     setWinner(false)
     setisDraw(false)
@@ -115,7 +119,8 @@ const useBoard = () => {
     handleBoard,
     board,
     handleQuitBtn,
-    winner
+    winner,
+    score
 
   }
 }

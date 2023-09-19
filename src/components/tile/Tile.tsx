@@ -1,5 +1,6 @@
 import { TURNS } from '../../types/enums'
 import type { TyleProps } from '../../types/interfaces'
+import './tile.style.css'
 
 const Tile: React.FC<TyleProps> = ({ children, index, updateBoard }) => {
   return (

@@ -19,11 +19,11 @@ export interface ModalProps {
 }
 
 export interface ResetButtonProps {
-  resetGame: () => void
+  resetGame: (reset?: string) => void
 }
 
 export interface BoardInfo {
-  resetGame: () => void
+  resetGame: (reset?: string) => void
   turn: TURNS
 }
 
@@ -34,4 +34,10 @@ export interface IBoard {
 
 export interface IResetButton {
   resetGame: () => void
+}
+
+export interface ScorePoints {
+  X: number
+  O: number
+  ties: number
 }
