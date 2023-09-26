@@ -6,7 +6,7 @@ const Scores = ({ score }: { score: ScorePoints }) => {
     <section className="scores">
       <div className='scores-x'>
         <span>X (YOU)</span>
-        <span className='score-number'>{score.X}</span>
+        <span className='score-number' data-testid='score-X'>{score.X}</span>
       </div>
       <div className='scores-ties'>
         <span>TIES</span>

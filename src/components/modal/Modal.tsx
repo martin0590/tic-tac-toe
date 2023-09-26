@@ -4,7 +4,7 @@ import './modal.style.css'
 const Modal = ({ isModalOpen, handleQuitBtn, turn, winner, isDraw, resetGame }: ModalProps) => {
   return (
     isModalOpen && (
-      <div id="myModal" className="modal">
+      <div id="myModal" className="modal" data-testid='modal-test'>
         <div className="modal-content">
           {winner && <h6 className='who-won'>YOU WON</h6>}
             {isDraw && <h1 className='modal-draw'> IT&apos;S A DRAW</h1>}
